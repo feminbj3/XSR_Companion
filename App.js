@@ -8,10 +8,11 @@ import HomeScreen from './src/screens/HomeScreen';
 import FuelScreen from './src/screens/FuelScreen';
 import ServiceScreen from './src/screens/ServiceScreen';
 import DocsScreen from './src/screens/DocsScreen';
+import BleScreen from './src/screens/BleScreen';
 import { colors } from './src/theme';
 
 const Tab = createBottomTabNavigator();
-const icons = { Home: 'speedometer', Fuel: 'water', Service: 'construct', Documents: 'document-text' };
+const icons = { Home: 'speedometer', Fuel: 'water', Service: 'construct', Documents: 'document-text', Bluetooth: 'bluetooth' };
 const theme = { ...DarkTheme, colors: { ...DarkTheme.colors, background: colors.bg, card: colors.panel, border: colors.line } };
 
 export default function App() {
@@ -19,7 +20,7 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer theme={theme}>
         <StatusBar style="light" />
-        <Tab.Navigator screenOptions={({ route }) => ({
+        <Tab.Navigator initialRouteName="Bluetooth" screenOptions={({ route }) => ({
           headerShown: false,
           tabBarActiveTintColor: colors.accent,
           tabBarInactiveTintColor: colors.muted,
@@ -29,6 +30,7 @@ export default function App() {
           <Tab.Screen name="Fuel" component={FuelScreen} />
           <Tab.Screen name="Service" component={ServiceScreen} />
           <Tab.Screen name="Documents" component={DocsScreen} />
+          <Tab.Screen name="Bluetooth" component={BleScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

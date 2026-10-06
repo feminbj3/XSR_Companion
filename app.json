@@ -7,25 +7,25 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#12161C"
     },
     "android": {
       "package": "com.femin.xsrcompanion",
+      "permissions": ["BLUETOOTH_SCAN", "BLUETOOTH_CONNECT", "ACCESS_FINE_LOCATION"],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#12161C"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
         "projectId": "4669471e-19c1-413f-bccd-f51b00f65323"
       }
     },
-    "owner": "feminbj"
+    "plugins": [
+  ["react-native-ble-plx", { "bluetoothAlwaysPermission": "Connect to your motorcycle over Bluetooth." }]
+]
   }
 }
